@@ -9,7 +9,7 @@ p user_location
 
 #Step 1 - Get URL from google maps
 
-gmaps_url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{user_location}&key=AIzaSyB92cYxPcYqgjwBJfWlwDQw_7yjuyU3tpA"
+gmaps_url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{user_location}&key=#{ENV.fetch("GMAPS_KEY")}"
 
 require "open-uri"
 raw_response = URI.open(gmaps_url).read
